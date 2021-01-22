@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CostService} from "./cost.service";
-
 @Component({
   selector: 'app-cost-component',
   templateUrl: './cost-component.component.html',
@@ -8,10 +7,15 @@ import {CostService} from "./cost.service";
   providers: [CostService]
 })
 export class CostComponentComponent implements OnInit {
-  costs:any = []
-  constructor(private service: CostService) { }
+  costs: any = []
+
+  constructor(private service: CostService) {
+  }
+
   ngOnInit(): void {
-    this.service.getCosts().subscribe(val => {this.costs = val; console.log(this.costs)})
+    this.service.getCosts().subscribe(val => {
+      this.costs = val;
+    })
   }
 
 }

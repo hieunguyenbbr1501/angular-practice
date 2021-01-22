@@ -1,21 +1,18 @@
-<p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
-</p>
-<div class="row">
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
+<div class="container w-90">
+  <div class="row ml-0 mr-0">
+    <a class="" style="cursor: pointer" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="costCollapse"><i class="fas fa-caret-right"></i>&nbsp; Cost</a>
   </div>
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample2">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  <div class="row ml-0 mr-0" id="costCollapse">
+    <div class="col-md-3 m-0 p-0" *ngFor="let item of costs">
+      <div class="collapse multi-collapse">
+        <div class="card card-body text-center border-0 pb-0" [ngClass]="{'important' : item.important == true}">
+          {{item.name}}
+        </div>
+        <div class="card card-body text-center border-0">
+          <h5>{{item.currencyUnit}}{{item.value}}</h5>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
