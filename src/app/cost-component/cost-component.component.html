@@ -1,18 +1,16 @@
-<div class="container w-90">
-  <div class="row ml-0 mr-0">
-    <a class="" style="cursor: pointer" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="costCollapse"><i class="fas fa-caret-right"></i>&nbsp; Cost</a>
-  </div>
-  <div class="row ml-0 mr-0" id="costCollapse">
-    <div class="col-md-3 m-0 p-0" *ngFor="let item of costs">
-      <div class="collapse multi-collapse">
-        <div class="card card-body text-center border-0 pb-0" [ngClass]="{'important' : item.important == true}">
-          {{item.name}}
-        </div>
-        <div class="card card-body text-center border-0">
-          <h5>{{item.currencyUnit}}{{item.value}}</h5>
-        </div>
+<div class="row ml-0 mr-0">
+  <a class="" style="cursor: pointer" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"
+     aria-controls="costCollapse"><i class="fas fa-caret-right"></i>&nbsp; Cost</a>
+</div>
+<div class="row ml-0 mr-0" id="costCollapse">
+  <div class="m-0 p-0 col-3" *ngFor="let item of costs">
+    <div class="collapse multi-collapse">
+      <div class="card card-body text-center border-0 pb-0" [ngClass]="{'important' : item.important == true}">
+        {{item.name}}
+      </div>
+      <div class="card card-body text-center border-0">
+        <h5>{{item.currencyUnit}}{{item.value}}</h5>
       </div>
     </div>
   </div>
 </div>
-
