@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ServiceService} from "./service.service";
 
 @Component({
   selector: 'app-service-breakdown-component',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-breakdown-component.component.css']
 })
 export class ServiceBreakdownComponentComponent implements OnInit {
+  constructor(private service: ServiceService) {
+  }
 
-  constructor() { }
+  data: any
 
   ngOnInit(): void {
+    this.service.getServices().subscribe(val => {
+      this.data = val;
+    })
   }
 
 }

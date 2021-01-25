@@ -1,1 +1,15 @@
-<p>reservation-component works!</p>
+<div class="col-6 mt-4 pl-0">
+  <div class="col-6 text-center mb-2 tbl-header">Services Breakdown</div>
+  <table class="table">
+    <thead>
+    </thead>
+    <tbody>
+    <tr *ngFor="let service of data, index as i, " [ngClass]="{'bg-gray' : i%2==0}" >
+      <td class="text-left">
+        <div class="box" [ngStyle]="{'background-color': service['color']}"></div>
+        {{ service["name"] }}</td>
+      <td class="text-right">${{ service["price"] }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

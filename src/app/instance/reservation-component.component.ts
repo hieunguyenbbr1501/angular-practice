@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {InstanceService} from "./instance.service";
 
 @Component({
   selector: 'app-reservation-component',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponentComponent implements OnInit {
 
-  constructor() { }
+  data : any = {}
+  constructor(private service: InstanceService) {
+
+  }
 
   ngOnInit(): void {
+    this.service.getInstances().subscribe(res => {this.data = res} );
   }
 
 }
