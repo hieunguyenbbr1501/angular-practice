@@ -7,7 +7,7 @@ import {CostService} from "./cost.service";
   providers: [CostService]
 })
 export class CostComponentComponent implements OnInit {
-  costs: any = {}
+  costs: any = []
 
   constructor(private service: CostService) {
   }

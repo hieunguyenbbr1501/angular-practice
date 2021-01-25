@@ -12,9 +12,22 @@ export class ServiceBreakdownComponentComponent implements OnInit {
 
   data: any
 
+  labels: any = []
+
+  prices: any = []
+
+  colors: any[] = [{
+    backgroundColor:[]
+  }];
+
   ngOnInit(): void {
     this.service.getServices().subscribe(val => {
       this.data = val;
+      for (const [key, value] of Object.entries(val)) {
+        this.labels.push(value["name"]);
+        this.prices.push(value["price"]);
+        this.colors[0].backgroundColor.push(value["color"]);
+      }
     })
   }
 

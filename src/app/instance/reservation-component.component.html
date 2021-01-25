@@ -2,13 +2,23 @@
   <div class="col-6 text-center mb-2 tbl-header">Services Breakdown</div>
   <table class="table">
     <thead>
+    <tr>
+      <th scope="col">Instance type</th>
+      <th scope="col">On Demand Hours</th>
+      <th scope="col">Reserved Hours</th>
+      <th scope="col">Total Hours</th>
+      <th scope="col">Coverage</th>
+    </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let service of data, index as i, " [ngClass]="{'bg-gray' : i%2==0}" >
-      <td class="text-left">
-        <div class="box" [ngStyle]="{'background-color': service['color']}"></div>
-        {{ service["name"] }}</td>
-      <td class="text-right">${{ service["price"] }}</td>
+    <tr *ngFor="let instance of data, index as i, " [ngClass]="{'bg-gray' : i%2==0}" >
+      <td class="text-center">
+        <div class="box" [ngStyle]="{'background-color': instance['color']}"></div>
+        {{ instance["name"] | uppercase }}</td>
+      <td class="text-center">{{ instance["demand"] }}</td>
+      <td class="text-center">{{ instance["reserved"] }}</td>
+      <td class="text-center">{{ instance["demand"] + instance["reserved"] }}</td>
+      <td class="text-center">{{ instance["reserved"]/(instance["reserved"] + instance["demand"]) | percent }}</td>
     </tr>
     </tbody>
   </table>

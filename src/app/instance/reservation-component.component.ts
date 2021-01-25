@@ -8,7 +8,7 @@ import {InstanceService} from "./instance.service";
 })
 export class ReservationComponentComponent implements OnInit {
 
-  data : any = {}
+  data : any = []
   constructor(private service: InstanceService) {
 
   }
