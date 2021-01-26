@@ -1,14 +1,7 @@
-<div class="row ml-0 mr-0">
-  <div class="mb-3">
-    <a class="" style="cursor: pointer; font-size: 1.25rem" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"
-       aria-controls="costCollapse" (click)="rotate = !rotate" ><i class="fas" [ngClass]="rotate ? 'fa fa-caret-down': 'fa fa-caret-right'"></i>&nbsp; &nbsp; Cost</a>
-  </div>
-  <div class="w-100" style="border-bottom: solid 1px #4c4c4c21"></div>
-</div>
 <div class="row ml-0 mr-0" id="costCollapse">
   <div class="m-0 p-0 col-lg-3 col-md-6 col-sm-12" *ngFor="let item of costs">
-    <div class="collapse multi-collapse">
-      <div class="card card-body font-weight-bold text-center pb-0 border-0 cost-header" [ngClass]="{'important' : item.important == true}">
+    <div>
+      <div class="card card-body font-weight-bolder text-center pb-0 border-0 cost-header" [ngClass]="{'important' : item.important == true}">
         {{item.name}}
       </div>
       <div class="card card-body text-center border-0 p-1 font-weight-lighter">

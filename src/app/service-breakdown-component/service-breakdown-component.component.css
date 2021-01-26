@@ -9,9 +9,16 @@
   border: 1px solid black;
   clear: both;
 }
+
 #service-component {
   margin-top: 4rem;
 }
+
+.text-bold {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
   #service-component {
     margin-top: 1rem;

@@ -16,6 +16,10 @@ export class ServiceBreakdownComponentComponent implements OnInit {
 
   prices: any = []
 
+  sum: number = 0
+
+  currency: string = "$"
+
   colors: any[] = [{
     backgroundColor:[]
   }];
@@ -26,8 +30,11 @@ export class ServiceBreakdownComponentComponent implements OnInit {
       for (const [key, value] of Object.entries(val)) {
         this.labels.push(value["name"]);
         this.prices.push(value["price"]);
+        this.sum += value["price"];
+        this.currency = value["currency"]
         this.colors[0].backgroundColor.push(value["color"]);
       }
+      this.data.push({name: "Total", price: this.sum, color: null, currency: this.currency, is_sum: true});
     })
   }
 

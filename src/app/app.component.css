@@ -1,0 +1,6 @@
+@media screen and (max-width: 768px){
+  #costCollapse {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
