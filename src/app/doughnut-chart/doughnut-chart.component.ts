@@ -10,6 +10,7 @@ import {MultiDataSet, Label, Color} from 'ng2-charts';
 
 export class DoughnutChartComponent {
 
+  legend: boolean = false;
   @Input()
   doughnutChartLabels: Label[] = ['BMW', 'Ford', 'Tesla'];
   @Input()
@@ -21,5 +22,6 @@ export class DoughnutChartComponent {
       backgroundColor:["#FF7360", "#6FC8CE", "#FAFFF2"]
     }];
   doughnutChartType: ChartType = 'doughnut';
+
 
 }

@@ -9,3 +9,12 @@
   border: 1px solid black;
   clear: both;
 }
+#service-component {
+  margin-top: 4rem;
+}
+@media screen and (max-width: 768px) {
+  #service-component {
+    margin-top: 1rem;
+  }
+}
+

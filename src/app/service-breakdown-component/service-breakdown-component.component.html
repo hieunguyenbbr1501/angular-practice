@@ -1,6 +1,6 @@
-<div class="row ml-0 mr-0">
-  <div class="col-6 mt-4 pl-0">
-    <div class="col-6 text-center mb-2 tbl-header">Services Breakdown</div>
+<div class="row ml-0 mr-0" id="service-component">
+  <div class="col-lg-6 col-md-12 mt-4 pl-0 pr-0">
+    <div class="col-lg-6 col-md-12 text-center mb-2 tbl-header">Services Breakdown</div>
     <table class="table">
       <thead>
       </thead>
@@ -9,11 +9,11 @@
         <td class="text-left">
           <div class="box" [ngStyle]="{'background-color': service['color']}"></div>
           {{ service["name"] }}</td>
-        <td class="text-right">${{ service["price"] }}</td>
+        <td class="text-right">${{ service["price"] | number }}</td>
       </tr>
       </tbody>
     </table>
   </div>
-  <app-doughnut-chart class="col-6" [doughnutChartLabels]="labels" [doughnutChartData]="prices"
+  <app-doughnut-chart class="col-lg-6 col-md-12" [doughnutChartLabels]="labels" [doughnutChartData]="prices"
                       [doughnutChartColor]="colors"></app-doughnut-chart>
 </div>

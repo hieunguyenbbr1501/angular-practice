@@ -1,13 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .tbl-header {
   color: #00b3b3;
   font-size: 1.25rem;
 }
 .bg-gray {
-  background-color: #e0e0e0;
+  background-color: #f1f0f0;
+}
+.container {
+  background-color: #ffffff;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f1f1;
+  color: rgb(95, 99, 104);
 }
 body th {
   padding: .5rem !important;
   font-size: 0.75rem;
+}
+
+td {
+  font-size: 0.75rem;
+}
+.pl-6 {
+  padding-left: 2.5rem !important;
+}
+.pr-6 {
+  padding-right: 2.5rem !important;
 }
 

@@ -1,3 +1,16 @@
 .important {
-  color: #f56342;
+  color: #f37558;
 }
+.cost-header {
+  padding-top: 2.5rem !important;
+}
+.font-weight-lighter {
+  font-weight: 100 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .cost-header {
+    padding-top: 0.25rem !important;
+  }
+}
+

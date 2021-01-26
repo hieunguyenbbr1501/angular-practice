@@ -1,25 +1,33 @@
-<div class="col-6 mt-4 pl-0">
-  <div class="col-6 text-center mb-2 tbl-header">Services Breakdown</div>
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">Instance type</th>
-      <th scope="col">On Demand Hours</th>
-      <th scope="col">Reserved Hours</th>
-      <th scope="col">Total Hours</th>
-      <th scope="col">Coverage</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let instance of data, index as i, " [ngClass]="{'bg-gray' : i%2==0}" >
-      <td class="text-center">
-        <div class="box" [ngStyle]="{'background-color': instance['color']}"></div>
-        {{ instance["name"] | uppercase }}</td>
-      <td class="text-center">{{ instance["demand"] }}</td>
-      <td class="text-center">{{ instance["reserved"] }}</td>
-      <td class="text-center">{{ instance["demand"] + instance["reserved"] }}</td>
-      <td class="text-center">{{ instance["reserved"]/(instance["reserved"] + instance["demand"]) | percent }}</td>
-    </tr>
-    </tbody>
-  </table>
+<div class="row p-0 m-0 border-0">
+  <div class="col-lg-6 col-md-12 mt-4 pl-0 pr-0" id="#instanceContainer" >
+    <div class="mb-2 tbl-header">RESERVATION COVERAGE</div>
+    <div style="max-height: 250px; overflow: scroll">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col" class="text-left">Instance type</th>
+          <th scope="col" class="text-right">On Demand Hours</th>
+          <th scope="col" class="text-right">Reserved Hours</th>
+          <th scope="col" class="text-right">Total Hours</th>
+          <th scope="col" class="text-right">Coverage</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let instance of data, index as i, " class="border-0" [ngClass]="{'bg-gray' : i%2==0}" >
+          <td class="text-left">
+            <div class="box" [ngStyle]="{'background-color': instance['color']}"></div>
+            {{ instance["name"] | uppercase }}</td>
+          <td class="text-right" style="color: red">{{ instance["demand"] | number }}</td>
+          <td class="text-right" style="color: green">{{ instance["reserved"] |number }}</td>
+          <td class="text-right">{{ instance["demand"] + instance["reserved"] | number }}</td>
+          <td class="text-right">{{ instance["reserved"]/(instance["reserved"] + instance["demand"]) | percent }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-12 mt-4 pl-0 pr-0">
+    <app-bar-chart [barChartData]="barChartData" [barChartLabels]="labels"></app-bar-chart>
+  </div>
 </div>
+

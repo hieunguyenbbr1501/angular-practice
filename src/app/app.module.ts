@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ChartsModule } from 'ng2-charts';
 
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.componen
     ServiceBreakdownComponentComponent,
     ReservationComponentComponent,
     DoughnutChartComponent,
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,

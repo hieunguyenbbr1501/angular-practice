@@ -8,7 +8,7 @@ import {CostService} from "./cost.service";
 })
 export class CostComponentComponent implements OnInit {
   costs: any = []
-
+  rotate: boolean = false
   constructor(private service: CostService) {
   }
 
