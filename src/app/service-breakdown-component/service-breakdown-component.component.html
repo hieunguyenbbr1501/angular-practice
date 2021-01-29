@@ -10,7 +10,7 @@
           <div class="box" *ngIf="!service['is_sum']" [ngStyle]="{'background-color': service['color']}"></div>
           <span [ngClass]="{'text-bold' : service['is_sum']}">{{ service["name"] | uppercase }}</span>
         </td>
-        <td class="text-right" [ngClass]="{'text-bold' : service['is_sum']}">{{ service["currency"] }}{{ service["price"] | number }}</td>
+        <td class="text-right" [ngClass]="{'text-bold' : service['is_sum']}">{{ service["currency"] }}&nbsp;{{ service["price"] | number }}</td>
       </tr>
       </tbody>
     </table>

@@ -11,6 +11,11 @@ import { ChartsModule } from 'ng2-charts';
 
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { AuthComponent } from './auth/auth.component';
+import {FormsModule} from "@angular/forms";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {AuthGuard} from "./auth.guard";
+import { AccountComponent } from './account/account/account.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +25,18 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
     ReservationComponentComponent,
     DoughnutChartComponent,
     BarChartComponent,
+    AuthComponent,
+    DashboardComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

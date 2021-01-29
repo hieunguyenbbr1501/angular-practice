@@ -14,13 +14,13 @@
     },
     {
       "name": "Last Month",
-      "value": 10000,
+      "value": 9000,
       "currencyUnit": "$",
       "important": false
     },
     {
       "name": "Change from Last Month",
-      "value": 10000,
+      "value": 1000,
       "currencyUnit": "$",
       "important": true
     }

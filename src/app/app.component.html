@@ -1,19 +1,4 @@
-<div class="container w-85 p-0 pl-6 pr-6" id="costCollapse" style="min-height: 1000px">
-  <div class="row ml-0 mr-0 pt-5">
-    <div class="mb-3">
-      <a class="" style="cursor: pointer; font-size: 1.25rem" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"
-         aria-controls="costCollapse" (click)="rotate = !rotate" ><i class="fas" [ngClass]="rotate ? 'fa fa-caret-down': 'fa fa-caret-right'"></i>&nbsp; &nbsp; Cost</a>
-    </div>
-    <div class="w-100" style="border-bottom: solid 1px #4c4c4c21"></div>
-  </div>
-  <div class="collapse multi-collapse">
-    <app-cost-component></app-cost-component>
-    <div class="mt-2">
-      <app-service-breakdown-component></app-service-breakdown-component>
-    </div>
-    <div class="mt-2">
-      <app-reservation-component></app-reservation-component>
-    </div>
-  </div>
+<div class="container w-85 p-0 pl-6 pr-6 pt-4" id="costCollapse" style="min-height: 1000px">
+  <router-outlet></router-outlet>
 </div>
 
