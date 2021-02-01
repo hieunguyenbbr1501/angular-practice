@@ -6,11 +6,15 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class CostService {
-  private SERVER_URL = environment.apiUrl;
+  private SERVER_URL = 'http://localhost:3001';
   public data: any = []
   constructor(private http:HttpClient) {
   }
   getCosts(){
-    return this.http.get(this.SERVER_URL + '/cost')
+    let token : string = localStorage.getItem('currentUser') || ''
+      return this.http.get(this.SERVER_URL + '/cost', {
+        headers: {'authorization' : token}
+      })
+
   }
 }

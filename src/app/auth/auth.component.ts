@@ -22,11 +22,12 @@ export class AuthComponent implements OnInit {
     const { username, password } = this.form;
     this.authService.login(username, password).subscribe(
       data => {
-        this.tokenStorage.saveToken(data["accessToken"]);
+        console.log(JSON.parse(data).accessToken);
+        this.tokenStorage.saveToken(JSON.parse(data).accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        localStorage.setItem("currentUser", data["accessToken"])
+        localStorage.setItem("currentUser", JSON.parse(data).accessToken)
         this.router.navigate(['/dashboard']);
       },
       err => {
@@ -39,9 +40,6 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken() && localStorage.getItem('currentUser')) {
-      this.isLoggedIn = true;
-    }
-    if (this.isLoggedIn) {
       this.router.navigate(['/dashboard'])
     }
   }

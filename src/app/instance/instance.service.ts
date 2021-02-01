@@ -12,6 +12,9 @@ export class InstanceService {
   constructor(private http:HttpClient) {
   }
   getInstances() {
-    return this.http.get(this.SERVER_URL + "/instance")
+    let token : string = localStorage.getItem('currentUser') || ''
+    return this.http.get(this.SERVER_URL + "/instance", {
+      headers: {'authorization' : token}
+    })
   }
 }

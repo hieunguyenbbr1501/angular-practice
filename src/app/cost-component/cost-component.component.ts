@@ -14,6 +14,7 @@ export class CostComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getCosts().subscribe(val => {
+      console.log(val);
       this.costs = val;
     })
   }

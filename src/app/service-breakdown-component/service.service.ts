@@ -12,6 +12,9 @@ export class ServiceService {
   constructor(private http:HttpClient) {
   }
   getServices() {
-    return this.http.get(this.SERVER_URL + "/services");
+    let token : string = localStorage.getItem('currentUser') || ''
+    return this.http.get(this.SERVER_URL + "/services", {
+      headers: {'authorization' : token}
+    });
   }
 }
